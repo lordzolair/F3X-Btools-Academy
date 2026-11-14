@@ -56,5 +56,5 @@ $("#start-quiz").onclick=()=>{
 };
 // SUPABASE CONNECTION
 const SUPABASE_URL = "https://boyhsucjizuaiybmuhkf.supabase.co";
-const SUPABASE_KEY = "PASTE_YOUR_PUBLISHABLE_KEY_HERE";
+const SUPABASE_KEY = "sb_publishable_XQV_LfS09j-ECpyfzufsXA_LvsMBz54";
 refresh();
