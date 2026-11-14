@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#130f12">
+  <title>Dread Host F3X Academy</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="site-shell">
+    <aside class="sidebar">
+      <div class="brand-mark">DH</div>
+      <div class="brand-copy">
+        <p class="eyebrow">DREAD HOST</p>
+        <h1>F3X ACADEMY</h1>
+      </div>
+      <div class="side-rule"></div>
+      <p class="side-label">ACADEMY</p>
+      <nav aria-label="Main navigation">
+        <button class="nav-link active" data-view="dashboard"><span>✦</span> Dashboard</button>
+        <button class="nav-link" data-view="levels"><span>◈</span> Training levels</button>
+        <button class="nav-link" data-view="library"><span>▤</span> Training library</button>
+        <button class="nav-link" data-view="exams"><span>⚑</span> Examinations</button>
+        <button class="nav-link" data-view="honour"><span>♛</span> Hall of honour</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="seal">✦</div>
+        <p>DISCIPLINE · CRAFT · PRECISION</p>
+        <small>TRAINING DIVISION</small>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div><span class="status-dot"></span><span class="top-label">ACADEMY NETWORK</span></div>
+        <div class="top-right"><span class="top-label">TRAINEE TERMINAL</span><span class="avatar">DH</span></div>
+      </header>
+
+      <section class="view active" id="dashboard">
+        <div class="hero">
+          <div class="hero-content">
+            <p class="eyebrow gold">THE BUILDER'S PATH BEGINS</p>
+            <h2>WELCOME TO THE<br><em>DREAD HOST</em> ACADEMY</h2>
+            <p class="hero-text">Master the tools. Shape the environment. Build worlds worthy of the campaign.</p>
+            <button class="primary-btn" data-go="levels">ENTER TRAINING <span>→</span></button>
+          </div>
+          <div class="hero-seal"><div class="seal-ring">DH<span>✦</span>DH</div><small>EST. BY THE DREAD HOST</small></div>
+        </div>
+
+        <div class="section-heading"><div><p class="eyebrow">YOUR RECORD</p><h3>Trainee overview</h3></div><span class="small-tag">LOCAL DEMO PROFILE</span></div>
+        <div class="stats-grid">
+          <article class="stat-card"><span class="stat-icon">✧</span><p>ACADEMY RANK</p><strong id="rank">Initiate</strong><small>Your current standing</small></article>
+          <article class="stat-card"><span class="stat-icon">✦</span><p>EXPERIENCE</p><strong><span id="xp">0</span> <small>XP</small></strong><small>Earned through training</small></article>
+          <article class="stat-card"><span class="stat-icon">◈</span><p>LEVELS CLEARED</p><strong id="cleared">0 / 6</strong><small>Progress through the academy</small></article>
+        </div>
+
+        <div class="section-heading"><div><p class="eyebrow">THE CURRICULUM</p><h3>Six trials of mastery</h3></div><button class="text-btn" data-go="levels">VIEW ALL LEVELS →</button></div>
+        <div class="level-preview" id="dashboard-levels"></div>
+        <p class="notice"><strong>Prototype notice:</strong> Progress on this page is stored only in this browser. Accounts, verified Roblox practicals and instructor controls will be added in a later development stage.</p>
+      </section>
+
+      <section class="view" id="levels">
+        <div class="page-heading"><p class="eyebrow gold">THE CURRICULUM</p><h2>Training levels</h2><p>Six stages. One path from novice builder to master architect.</p></div>
+        <div class="levels-list" id="all-levels"></div>
+      </section>
+
+      <section class="view" id="library">
+        <div class="page-heading"><p class="eyebrow gold">KNOW YOUR TOOLS</p><h2>Training library</h2><p>Core F3X concepts for building clean, consistent environments.</p></div>
+        <div class="tool-grid" id="tool-grid"></div>
+      </section>
+
+      <section class="view" id="exams">
+        <div class="page-heading"><p class="eyebrow gold">PROVE YOUR UNDERSTANDING</p><h2>Examinations</h2><p>Knowledge checks prepare you for practical assessments in the Roblox training grounds.</p></div>
+        <div class="exam-card">
+          <div class="exam-emblem">⚑</div><div><p class="eyebrow">FOUNDATION CHECK</p><h3>F3X Fundamentals</h3><p>Try a short knowledge check on safe, organised building workflows.</p><button class="primary-btn" id="start-quiz">BEGIN KNOWLEDGE CHECK →</button></div>
+        </div>
+        <div id="quiz-area"></div>
+        <p class="notice">Passing a website quiz does not certify practical building ability. Practical assessments must be observed and verified in Roblox by an instructor.</p>
+      </section>
+
+      <section class="view" id="honour">
+        <div class="page-heading"><p class="eyebrow gold">RECOGNITION & ACHIEVEMENT</p><h2>Hall of honour</h2><p>A record of builders who complete the academy trials.</p></div>
+        <div class="empty-hall"><div class="big-seal">♛</div><h3>The first names are yet to be written.</h3><p>Verified graduates will appear here once trainee accounts and instructor approvals are connected.</p></div>
+      </section>
+
+      <footer><span>DREAD HOST F3X ACADEMY</span><span>BUILD WITH PURPOSE · TRAIN WITH DISCIPLINE</span></footer>
+    </main>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
