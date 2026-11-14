@@ -57,4 +57,6 @@ $("#start-quiz").onclick=()=>{
 // SUPABASE CONNECTION
 const SUPABASE_URL = "https://boyhsucjizuaiybmuhkf.supabase.co";
 const SUPABASE_KEY = "sb_publishable_XQV_LfS09j-ECpyfzufsXA_LvsMBz54";
+const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+console.log("Dread Host Academy: Supabase client initialised");
 refresh();
