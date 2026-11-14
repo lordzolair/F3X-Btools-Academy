@@ -59,4 +59,64 @@ const SUPABASE_URL = "https://boyhsucjizuaiybmuhkf.supabase.co";
 const SUPABASE_KEY = "sb_publishable_XQV_LfS09j-ECpyfzufsXA_LvsMBz54";
 const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 console.log("Dread Host Academy: Supabase client initialised");
+
+// TRAINEE REGISTRATION
+const authMessage = $("#auth-message");
+
+$("#signup-btn").addEventListener("click", async () => {
+  const displayName = $("#display-name").value.trim();
+  const email = $("#auth-email").value.trim();
+  const password = $("#auth-password").value;
+
+  if (!displayName || !email || !password) {
+    authMessage.textContent = "Please complete all fields.";
+    return;
+  }
+
+  const { data, error } = await supabaseClient.auth.signUp({
+    email,
+    password,
+    options: {
+      data: { display_name: displayName }
+    }
+  });
+
+  if (error) {
+    authMessage.textContent = error.message;
+    return;
+  }
+
+  if (data.session) {
+    authMessage.textContent = "Account created. You are signed in.";
+    showView("dashboard");
+  } else {
+    authMessage.textContent =
+      "Account created. Check your email to confirm your account before signing in.";
+  }
+});
+
+// TRAINEE SIGN IN
+$("#login-btn").addEventListener("click", async () => {
+  const email = $("#auth-email").value.trim();
+  const password = $("#auth-password").value;
+
+  if (!email || !password) {
+    authMessage.textContent = "Enter your email and password.";
+    return;
+  }
+
+  const { data, error } = await supabaseClient.auth.signInWithPassword({
+    email,
+    password
+  });
+
+  if (error) {
+    authMessage.textContent = error.message;
+    return;
+  }
+
+  authMessage.textContent = "Signed in successfully.";
+  showView("dashboard");
+});
+
 refresh();
