@@ -119,5 +119,25 @@ $("#login-btn").addEventListener("click", async () => {
   authMessage.textContent = "Signed in successfully.";
   showView("dashboard");
 });
+// PASSWORD RESET
+$("#forgot-password-btn").addEventListener("click", async () => {
+  const email = $("#auth-email").value.trim();
+
+  if (!email) {
+    authMessage.textContent = "Enter your email address first.";
+    return;
+  }
+
+  const { error } = await supabaseClient.auth.resetPasswordForEmail(email, {
+    redirectTo: "https://lordzolair.github.io/F3X-Btools-Academy/"
+  });
+
+  if (error) {
+    authMessage.textContent = error.message;
+    return;
+  }
+
+  authMessage.textContent = "Password reset email sent. Check your inbox.";
+});
 
 refresh();
