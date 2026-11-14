@@ -77,7 +77,8 @@ $("#signup-btn").addEventListener("click", async () => {
     email,
     password,
     options: {
-      data: { display_name: displayName }
+     data: { display_name: displayName },
+emailRedirectTo: "https://lordzolair.github.io/F3X-Btools-Academy/"
     }
   });
 
