@@ -139,5 +139,32 @@ $("#forgot-password-btn").addEventListener("click", async () => {
 
   authMessage.textContent = "Password reset email sent. Check your inbox.";
 });
+// SAVE NEW PASSWORD
+$("#save-password-btn").addEventListener("click", async () => {
+  const password = $("#new-password").value;
+  const confirmPassword = $("#confirm-password").value;
+  const resetMessage = $("#reset-message");
+
+  if (password.length < 8) {
+    resetMessage.textContent = "Password must be at least 8 characters.";
+    return;
+  }
+
+  if (password !== confirmPassword) {
+    resetMessage.textContent = "Passwords do not match.";
+    return;
+  }
+
+  const { error } = await supabaseClient.auth.updateUser({
+    password: password
+  });
+
+  if (error) {
+    resetMessage.textContent = error.message;
+    return;
+  }
+
+  resetMessage.textContent = "Password updated successfully. You can now sign in.";
+});
 
 refresh();
