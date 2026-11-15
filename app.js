@@ -54,6 +54,12 @@ $("#start-quiz").onclick=()=>{
   $("#quiz-area").querySelectorAll("[data-q]").forEach(b=>b.onclick=()=>{answers[b.dataset.q]=+b.dataset.a;b.parentElement.querySelectorAll("button").forEach(x=>x.style.borderColor="#453139");b.style.borderColor="#c8a45c"});
   $("#submit-quiz").onclick=()=>{if(Object.keys(answers).length!==questions.length){$("#quiz-result").innerHTML='<p class="quiz-result">Please answer all three questions first.</p>';return}const score=questions.reduce((n,q,i)=>n+(answers[i]===q[2]?1:0),0);$("#quiz-result").innerHTML=`<p class="quiz-result">You scored ${score} / ${questions.length}. ${score===3?"Excellent foundation knowledge.":"Review the library and try again."} This is a practice check, not a qualification.</p>`};
 };
+// CHECK FOR PASSWORD RECOVERY
+supabaseClient.auth.onAuthStateChange((event) => {
+  if (event === "PASSWORD_RECOVERY") {
+    showView("reset-password");
+  }
+});
 // SUPABASE CONNECTION
 const SUPABASE_URL = "https://boyhsucjizuaiybmuhkf.supabase.co";
 const SUPABASE_KEY = "sb_publishable_XQV_LfS09j-ECpyfzufsXA_LvsMBz54";
